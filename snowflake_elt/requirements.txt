@@ -1,0 +1,9 @@
+pandas==1.4.3
+snowflake==0.8.1
+snowflake-connector-python==3.10.1
+snowflake-snowpark-python==1.18.0
+snowflake._legacy==0.8.1
+snowflake.core==0.8.1
+python-dotenv==1.0.1
+
+snowflake-snowpark-python[pandas]

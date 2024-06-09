@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: dim
+    database: dwh_project02
+    schema: public
+    tables:
+      - name: dim_regions
+      - name: dim_territories
+      - name: dim_suppliers
+      - name: dim_shippers
+      - name: dim_categories
+      - name: dim_products
+      - name: dim_customers
+      - name: dim_employees
+
+  - name: fact
+    database: dwh_project02
+    schema: public
+    tables:
+      - name: fact_orders
+      - name: fact_order_details
+      - name: fact_employee_territories

@@ -1,0 +1,13 @@
+snowflake_dbt:
+  outputs:
+    dev:
+      account: xxxx
+      database: xxxx
+      password: xxxx
+      role: xxxx
+      schema: xxxx
+      threads: xxxx
+      type: xxxx
+      user: xxxx
+      warehouse: xxxx
+  target: dev

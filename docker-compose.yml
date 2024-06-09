@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  snowflake_elt:
+    image: snowflake_elt
+    build:
+      context: .
+      dockerfile: ./snowflake_elt/Dockerfile
+    container_name: snowflake_elt
+    healthcheck:
+      test: ["CMD", "python", "--version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    env_file:
+      - ./snowflake_elt/.env.dev
+
+  snowflake_dbt:
+    image: snowflake_dbt
+    build:
+      context: .
+      dockerfile: ./snowflake_dbt/Dockerfile
+      args:
+        commit_ref: main
+    container_name: snowflake_dbt
+    healthcheck:
+      test: ["CMD", "dbt", "--version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./snowflake_dbt:/usr/app
+      - ./profiles.yml:/root/.dbt/profiles.yml
