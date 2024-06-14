@@ -21,7 +21,7 @@ This project is designed to demonstrate an ELT (Extract, Load, Transform) data p
 
 ## Architecture
 
-![Architecture Diagram](./architecture.jpg)
+![Architecture Diagram](./architecture.png)
 
 1. **Extract**: Data is extracted from source systems.
 2. **Load**: Extracted data is loaded into Snowflake.
